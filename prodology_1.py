@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 # Load the dataset
 try:
     checkprice = pd.read_csv(
-        '/home/harshit/Desktop/c and java and python programming/python/ai_ml practise/ml/internship/house/train.csv')
+        'path/to/house/train.csv')
 except FileNotFoundError:
     print("File not found. Please check the file path.")
     exit(1)
@@ -43,7 +43,7 @@ print("R-squared:", r2)
 # Load the test dataset with IDs
 try:
     test_data = pd.read_csv(
-        '/home/harshit/Desktop/c and java and python programming/python/ai_ml practise/ml/internship/house/test.csv')
+        '/path/to/house/test.csv')
 except FileNotFoundError:
     print("File not found. Please check the file path.")
     exit(1)
@@ -61,7 +61,7 @@ sorted_test_data = test_data[['Id', 'PredictedPrice']].sort_values(by='Predicted
 # Save sorted test data to a new CSV file
 try:
     sorted_test_data.to_csv(
-        '/home/harshit/Desktop/c and java and python programming/python/ai_ml practise/ml/internship/house/sorted_test_data.csv',
+        'sorted_test_data.csv',
         index=False)
     print("Data saved to csv file at given path")
 except Exception as e:
